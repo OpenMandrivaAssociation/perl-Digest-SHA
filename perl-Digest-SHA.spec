@@ -1,8 +1,8 @@
 %define	module	Digest-SHA
 %define	name	perl-%{module}
 %define	modprefix Digest
-%define	version	5.45
-%define	release	%mkrel 2
+%define	version	5.46
+%define	release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
