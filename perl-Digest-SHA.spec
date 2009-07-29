@@ -1,19 +1,18 @@
-%define	module	Digest-SHA
-%define	name	perl-%{module}
-%define	modprefix Digest
-%define	version	5.47
-%define	release	%mkrel 3
+%define	upstream_name	 Digest-SHA
+%define	upstream_version 5.47
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl extension for SHA-1/224/256/384/512
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Digest::SHA is a complete implementation of the NIST Secure Hash Standard. It
@@ -22,7 +21,7 @@ SHA-384, and SHA-512 message digests.  The module can handle all types of
 input, including partial-byte data.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -41,9 +40,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorarch}/%{modprefix}
-%{perl_vendorarch}/auto/%{modprefix}
+%{perl_vendorarch}/Digest
+%{perl_vendorarch}/auto/Digest
 %{_mandir}/*/*
 %{_bindir}/shasum
-
-
