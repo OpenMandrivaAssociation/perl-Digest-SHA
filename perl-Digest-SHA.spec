@@ -1,5 +1,5 @@
 %define	upstream_name	 Digest-SHA
-%define	upstream_version 5.47
+%define upstream_version 5.48
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Perl extension for SHA-1/224/256/384/512
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
@@ -28,7 +28,7 @@ input, including partial-byte data.
 %make CFLAGS="%{optflags}"
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
