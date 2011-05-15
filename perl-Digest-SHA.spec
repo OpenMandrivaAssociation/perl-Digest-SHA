@@ -1,9 +1,9 @@
 %define	upstream_name	 Digest-SHA
-%define upstream_version 5.61
+%define upstream_version 5.62
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Perl extension for SHA-1/224/256/384/512
 License:	GPL+ or Artistic
