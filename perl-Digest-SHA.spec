@@ -13,8 +13,6 @@ Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstrea
 
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
-# temporary dep due to the perl-5.14 bump
-BuildRequires:  perl-List-MoreUtils >= 0.320.0-4
 
 %description
 Digest::SHA is a complete implementation of the NIST Secure Hash Standard. It
