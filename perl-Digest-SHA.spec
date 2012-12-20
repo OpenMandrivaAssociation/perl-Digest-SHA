@@ -1,18 +1,17 @@
-%define	upstream_name	 Digest-SHA
-%define upstream_version 5.62
+%define	module	Digest-SHA
+%define	modver	5.62
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    5
+Name:		perl-%{module}
+Version:	%{perl_convert_version %{modver}}
+Release:	6
 
 Summary:	Perl extension for SHA-1/224/256/384/512
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{module}
+Source0:	http://www.cpan.org/modules/by-module/Digest/%{module}-%{modver}.tar.gz
 
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Digest::SHA is a complete implementation of the NIST Secure Hash Standard. It
@@ -21,32 +20,29 @@ SHA-384, and SHA-512 message digests.  The module can handle all types of
 input, including partial-byte data.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{module}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make CFLAGS="%{optflags}"
 
 %check
 %make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{perl_vendorarch}/Digest
 %{perl_vendorarch}/auto/Digest
 %{_mandir}/*/*
 %{_bindir}/shasum
 
-
 %changelog
+* Thu Dec 20 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 5.620.0-6
+- rebuild against new perl-5.16.2
+
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 5.620.0-4mdv2012.0
 + Revision: 765189
 - rebuilt for perl-5.14.2
