@@ -1,15 +1,15 @@
-%define	module	Digest-SHA
+%define	modname	Digest-SHA
 %define	modver	5.62
 
-Name:		perl-%{module}
+Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
 Release:	6
 
 Summary:	Perl extension for SHA-1/224/256/384/512
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source0:	http://www.cpan.org/modules/by-module/Digest/%{module}-%{modver}.tar.gz
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Digest/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	perl-devel
 
@@ -20,7 +20,7 @@ SHA-384, and SHA-512 message digests.  The module can handle all types of
 input, including partial-byte data.
 
 %prep
-%setup -q -n %{module}-%{modver}
+%setup -q -n %{modname}-%{modver}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
