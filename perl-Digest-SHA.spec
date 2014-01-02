@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 %define	modname	Digest-SHA
 %define modver 5.85
 
