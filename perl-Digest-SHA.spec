@@ -1,14 +1,15 @@
+%define debug_package %{nil}
 %define	modname	Digest-SHA
-%define	modver	5.62
+%define modver 5.85
 
 Summary:	Perl extension for SHA-1/224/256/384/512
 Name:		perl-%{modname}
-Version:	%{perl_convert_version %{modver}}
-Release:	11
+Version:	%perl_convert_version %{modver}
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Digest/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Digest/Digest-SHA-%{modver}.tar.gz
 
 BuildRequires:	perl-devel
 
@@ -37,3 +38,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorarch}/auto/Digest
 %{_mandir}/*/*
 %{_bindir}/shasum
+
