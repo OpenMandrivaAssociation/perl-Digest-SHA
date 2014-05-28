@@ -1,8 +1,9 @@
 %define debug_package %{nil}
 %define	modname	Digest-SHA
-%define modver 5.90
+%define modver 5.91
 
 Summary:	Perl extension for SHA-1/224/256/384/512
+
 
 
 Name:		perl-%{modname}
@@ -40,6 +41,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorarch}/auto/Digest
 %{_mandir}/*/*
 %{_bindir}/shasum
+
 
 
 
