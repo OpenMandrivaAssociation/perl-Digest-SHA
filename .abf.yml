@@ -6,5 +6,6 @@ removed_sources:
   Digest-SHA-5.88.tar.gz: 27195da32194531bfe13d7cd4f06b69e7aebbdc8
   Digest-SHA-5.89.tar.gz: 920d8013d466b5ed6c53ebff714443936fde124a
   Digest-SHA-5.90.tar.gz: 2df88f1a702dab7ef0ee4d9dd4e33f6d9a1eea4f
-sources:
   Digest-SHA-5.91.tar.gz: c25cab08fe27b0d62800c66562fc5c4422030a6e
+sources:
+  Digest-SHA-5.92.tar.gz: b9bb3a9b4f30bab8d71228d3ab1898738cc2f2d8
