@@ -1,11 +1,11 @@
 %define debug_package %{nil}
 %define	modname	Digest-SHA
-%define modver 5.93
+%define modver 6.02
 
 Summary:	Perl extension for SHA-1/224/256/384/512
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
